@@ -1,3 +1,17 @@
-<p>
-  {{ pessoas }}
+<h1>Buscar pessoa</h1>
+<div>
+  <input type="search" [(ngModel)]="valorBuscaPessoa" (keyup.enter)="buscarPessoa()" />
+</div>
+<p>Pessoa Encontrada: {{ (pessoaEncontrada$ | async)?.nome }}</p>
+
+<p></p>
+
+<h3>Adicionar Pessoa</h3>
+<div>
+  <input type="search" [(ngModel)]="nomeAdicionar" (keyup.enter)="adicionarPessoa()" />
+</div>
+
+<h1>Listar pessoas</h1>
+<p *ngFor="let pessoa of pessoas$ | async">
+  {{ pessoa.nome }}
 </p>
